@@ -29,8 +29,11 @@ void tableSelection()
 	cin >> tableOption;
 	if (tableOption == 1) tableElements = 3;
 	else tableElements = 4;
-}```
+}
+```
+
 Pentru a salva in memorie numele jucatorilor am optat in folosirea a doua siruri de caractere (* user1 * si * user 2 *) pe care le-am citit in functia * twoPlayerGame *. In cazul unui singur jucator folosesc functia *onePlayerGame* ce atribuie o valoare doar in prima variabila *user1*.
+
 ```cpp
 void twoPlayerGame()
 {
@@ -79,9 +82,11 @@ void onePlayerGame()
 		if (foundUser == 0)
 			cout << "name contains invalid characters, try another one \n";
 	}
-}```
+}
+```
 
-Pentru functionarea propriu-zisa a jocului am optat sa folosesc doua functii: *startOne* pentru alegerea de a juca cu o alta persoana si *startTwo* pentru a juca contra calculatorului. 
+Pentru functionarea propriu-zisa a jocului am optat sa folosesc doua functii: *startOne* pentru alegerea de a juca cu o alta persoana si *startTwo* pentru a juca contra calculatorului.
+
 ```cpp
 void startOne()
 {
@@ -107,8 +112,10 @@ void startOne()
 	if (check0() != 1 && checkX() != 1) cout << "It's a draw!" << endl;
 	cout << "Final result is :" << endl;
 	gameProgress(game);
-}```
+}
+```
 Functia ce afiseaza jocul curent se numeste *gameProgress* si aceasta, prin doua structuri *for* si printr-o structura *switch* mascheaza tabelul propriu-zis si afiseaza "- , x , 0" pentru valorile de 0, 1 si 2, respectiv, ale matricei. 
+
 ```cpp
 void gameProgress(int game[5][5])
 {
@@ -141,7 +148,8 @@ void gameChangeX(int game[5][5])
 			cin >> inputLine >> inputColumn;
 		}
 	gameProgress(game);
-}```
+}
+```
 
 Functia *randomNr* verifica numarul de elemente ale tabelului folosit (*tableElements*) si genereaza o valoare aleatorie intre 1 si numarul de elemente curente. *gameChangePC* se foloseste de aceasta functie pentru a genera valori introduse de calculator, pe care ulterior le verifica si le introduce in tabel, afisand intr-un final tabelul propriu-zis, precedat de un mesaj.
 ```cpp
@@ -165,7 +173,8 @@ void gameChangePC(int game[5][5])
 			randomNr();
 	cout << "PC's move is : \n";
 	gameProgress(game);
-}```
+}
+```
 
 Functiile de *checkX* sau *check0* sunt aproape identice, folosite dupa fiecare modificare facuta in matrice pentru a vedea daca exista un utilizator ce a castigat. In functia data mai jos sunt numarate elementele de pe fiecare linie sau coloana care sunt egale cu 1 (elementele de X).
 
@@ -197,6 +206,7 @@ int checkX()
 	}
 	if (nrLine == tableElements || nrColumn == tableElements) return 1;
 	return 0;
-}```
+}
+```
 Cum am considerat 0 ca fiind mutarea facuta de PC (in cazul unui singur jucator), nu mai este nevoie sa creez o alta functie pentru a verifica castigul calculatorului, ci dosar o folosesc pe *check0*.
 
