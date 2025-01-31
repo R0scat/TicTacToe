@@ -188,6 +188,8 @@ void gameChangePC(int game[5][5])
 	gameProgress(game);
 }
 ```
+}
+```
 
 The *checkX* and *check0* functions are almost identical. They're used one after the other after every change made to the matrix to see if the game's finished or if someone won. The function counts the number of elements equal to 1 (for x) or 2 (for 0). If the number of elements found on a line, column or diagonal is equal to *tableElements* then the the function returns 1 as a way to signalise that the checked user won (x or 0). If, at the end, the game isn't actually won by anyone then the function *start* displays the message *It's a draw!* on the screen. 
 
