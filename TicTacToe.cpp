@@ -106,7 +106,7 @@ void gameChange0(int game[5][5])
 		}
 	gameProgress(game);
 }
-void random()
+void randomNr()
 {
 	switch (tableElements)
 		{
@@ -118,12 +118,12 @@ void gameChangePC(int game[5][5])
 {
 	int ok = 0;
 	srand(time(NULL));
-	random();
+	randomNr();
 	while (ok == 0)
 		if (game[inputLine][inputColumn] == 0)
 			game[inputLine][inputColumn] = 2, ok = 1;
 		else
-			random();
+			randomNr();
 	cout << "PC's move is : \n";
 	gameProgress(game);
 }
